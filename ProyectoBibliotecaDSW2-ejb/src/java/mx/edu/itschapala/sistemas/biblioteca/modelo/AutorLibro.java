@@ -96,7 +96,7 @@ public class AutorLibro implements Serializable {
 
     @Override
     public String toString() {
-        return "mx.edu.itschapala.sistemas.biblioteca.AutorLibro[ id=" + id + " ]";
+        return "mx.edu.itschapala.sistemas.biblioteca.modelo.AutorLibro[ id=" + id + " ]";
     }
     
 }

@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <h1>Lista de Categoria</h1>
+        <f:view>
+
+
+            <h:form>
+                <h:commandButton action="CategoriaCrearEditar" value="Nuevo" actionListener="#{categoriaBean.limpiarNuevo}"/>
+                <h1><h:outputText value="List"/></h1>
+                <h:dataTable value="#{categoriaBean.lista}" var="item">
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="Id"/>
+                        </f:facet>
+                        <h:outputText value="#{item.id}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="Nombre"/>
+                        </f:facet>
+                        <h:outputText value="#{item.nombre}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="Descripcion"/>
+                        </f:facet>
+                        <h:outputText value="#{item.descripcion}"/>
+                    </h:column>
+                    <h:column>
+                        <h:commandButton action="CategoriaCrearEditar" value="Editar" actionListener="#{categoriaBean.prepararEditar}">
+                            <f:setPropertyActionListener target="#{categoriaBean.categoria}" value="#{item}"/>
+                        </h:commandButton>
+                    </h:column>
+                    <h:column>
+                        <h:commandButton action="CategoriaConfirmar" value="Eliminar" actionListener="#{categoriaBean.prepararEliminar}">
+                            <f:setPropertyActionListener target="#{categoriaBean.categoria}" value="#{item}"/>
+                        </h:commandButton>
+                    </h:column>
+                </h:dataTable>
+            </h:form>
+        </f:view>
+
+    </h:body>
+</html>
+

@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <f:view>
+
+
+            <h:form>
+                <h1><h:outputText value="Create/Edit"/></h1>
+                <h:panelGrid columns="2">
+                    
+                    <h:outputLabel value="Titulo:" for="titulo" />
+                    <h:inputText id="titulo" value="#{libroBean.libro.titulo}" title="Titulo" required="true" requiredMessage="The Titulo field is required."/>
+                    <h:outputLabel value="Isbn:" for="isbn" />
+                    <h:inputText id="isbn" value="#{libroBean.libro.isbn}" title="Isbn" required="true" requiredMessage="The Isbn field is required."/>
+                    <h:outputLabel value="Estado:" for="estado" />
+                    <h:inputText id="estado" value="#{libroBean.libro.estado}" title="Estado" required="true" requiredMessage="The Estado field is required."/>
+                    <h:outputLabel value="NumPaginas:" for="numPaginas" />
+                    <h:inputText id="numPaginas" value="#{libroBean.libro.numPaginas}" title="NumPaginas" />
+                    <h:outputLabel value="Abstract1:" for="abstract1" />
+                    <h:inputTextarea rows="4" cols="30" id="abstract1" value="#{libroBean.libro.abstract1}" title="Abstract1" />
+                    <h:outputLabel value="Imagen:" for="imagen" />
+                    <h:inputTextarea rows="4" cols="30" id="imagen" value="#{libroBean.libro.imagen}" title="Imagen" />
+                    <h:commandButton action="LibroConfirmar" value="Aceptar"/> 
+                    <h:commandButton action="LibroLista" value="Cancelar" immediate="true"/>
+                </h:panelGrid>
+            </h:form>
+        </f:view>
+
+    </h:body>
+</html>
+

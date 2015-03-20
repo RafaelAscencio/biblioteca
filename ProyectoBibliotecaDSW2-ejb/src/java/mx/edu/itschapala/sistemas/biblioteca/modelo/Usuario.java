@@ -235,7 +235,7 @@ public class Usuario implements Serializable {
 
     @Override
     public String toString() {
-        return "mx.edu.itschapala.sistemas.biblioteca.Usuario[ id=" + id + " ]";
+        return "mx.edu.itschapala.sistemas.biblioteca.modelo.Usuario[ id=" + id + " ]";
     }
     
 }

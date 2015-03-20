@@ -248,7 +248,7 @@ public class Empleado implements Serializable {
 
     @Override
     public String toString() {
-        return "mx.edu.itschapala.sistemas.biblioteca.Empleado[ id=" + id + " ]";
+        return "mx.edu.itschapala.sistemas.biblioteca.modelo.Empleado[ id=" + id + " ]";
     }
     
 }

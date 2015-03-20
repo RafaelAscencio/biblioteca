@@ -123,7 +123,7 @@ public class Puesto implements Serializable {
 
     @Override
     public String toString() {
-        return "mx.edu.itschapala.sistemas.biblioteca.Puesto[ id=" + id + " ]";
+        return "mx.edu.itschapala.sistemas.biblioteca.modelo.Puesto[ id=" + id + " ]";
     }
     
 }

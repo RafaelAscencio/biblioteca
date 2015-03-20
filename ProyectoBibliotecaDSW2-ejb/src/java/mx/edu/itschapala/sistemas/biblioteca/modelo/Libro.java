@@ -183,7 +183,7 @@ public class Libro implements Serializable {
 
     @Override
     public String toString() {
-        return "mx.edu.itschapala.sistemas.biblioteca.Libro[ id=" + id + " ]";
+        return "mx.edu.itschapala.sistemas.biblioteca.modelo.Libro[ id=" + id + " ]";
     }
     
 }

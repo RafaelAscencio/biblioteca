@@ -96,7 +96,7 @@ public class LibroCategoria implements Serializable {
 
     @Override
     public String toString() {
-        return "mx.edu.itschapala.sistemas.biblioteca.LibroCategoria[ id=" + id + " ]";
+        return "mx.edu.itschapala.sistemas.biblioteca.modelo.LibroCategoria[ id=" + id + " ]";
     }
     
 }

@@ -123,7 +123,7 @@ public class Autor implements Serializable {
 
     @Override
     public String toString() {
-        return "mx.edu.itschapala.sistemas.biblioteca.Autor[ id=" + id + " ]";
+        return "mx.edu.itschapala.sistemas.biblioteca.modelo.Autor[ id=" + id + " ]";
     }
     
 }
