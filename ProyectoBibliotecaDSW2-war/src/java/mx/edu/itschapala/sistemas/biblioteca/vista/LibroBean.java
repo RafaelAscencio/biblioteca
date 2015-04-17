@@ -60,14 +60,14 @@ public class LibroBean {
 
         }
         accion = Accion.NADA;
-        return "LibroLista";
+        return "LibroListaV2";
     }
 
     public String procesarCancelar() {
         if (accion == Accion.ELIMINAR) {
-            return "LibroLista";
+            return "LibroListaV2";
         } else {
-            return "LibroCrearEditar";
+            return "LibroCrearEditarV2";
 
         }
     }

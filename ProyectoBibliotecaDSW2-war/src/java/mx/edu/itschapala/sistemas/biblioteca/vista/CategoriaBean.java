@@ -60,14 +60,14 @@ public class CategoriaBean {
 
         }
         accion = Accion.NADA;
-        return "CategoriaLista";
+        return "CategoriaListaV2";
     }
 
     public String procesarCancelar() {
         if (accion == Accion.ELIMINAR) {
-            return "CategoriaLista";
+            return "CategoriaListaV2";
         } else {
-            return "CategoriaCrearEditar";
+            return "CategoriaCrearEditarV2";
 
         }
     }

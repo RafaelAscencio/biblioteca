@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+    <body>
+
+        <ui:composition template="./TemplatePrincipal.xhtml">
+
+            <ui:define name="content">
+                 <f:view>
+
+
+            <h:form>
+                <h1><h:outputText value="Create/Edit"/></h1>
+                <h:panelGrid columns="2">
+                   
+                    <h:outputLabel value="Nombre:" for="nombre" />
+                    <h:inputText id="nombre" value="#{usuarioBean.usuario.nombre}" title="Nombre" required="true" requiredMessage="The Nombre field is required."/>
+                    <h:outputLabel value="ApellidoPaterno:" for="apellidoPaterno" />
+                    <h:inputText id="apellidoPaterno" value="#{usuarioBean.usuario.apellidoPaterno}" title="ApellidoPaterno" required="true" requiredMessage="The ApellidoPaterno field is required."/>
+                    <h:outputLabel value="Telefono:" for="telefono" />
+                    <h:inputText id="telefono" value="#{usuarioBean.usuario.telefono}" title="Telefono" required="true" requiredMessage="The Telefono field is required."/>
+                    <h:outputLabel value="Sexo:" for="sexo" />
+                    <h:inputText id="sexo" value="#{usuarioBean.usuario.sexo}" title="Sexo" required="true" requiredMessage="The Sexo field is required."/>
+                    <h:outputLabel value="Direccion:" for="direccion" />
+                    <h:inputText id="direccion" value="#{usuarioBean.usuario.direccion}" title="Direccion" required="true" requiredMessage="The Direccion field is required."/>
+                    <h:outputLabel value="Colonia:" for="colonia" />
+                    <h:inputText id="colonia" value="#{usuarioBean.usuario.colonia}" title="Colonia" required="true" requiredMessage="The Colonia field is required."/>
+                    <h:outputLabel value="Ciudad:" for="ciudad" />
+                    <h:inputText id="ciudad" value="#{usuarioBean.usuario.ciudad}" title="Ciudad" required="true" requiredMessage="The Ciudad field is required."/>
+                    <h:outputLabel value="Estado:" for="estado" />
+                    <h:inputText id="estado" value="#{usuarioBean.usuario.estado}" title="Estado" required="true" requiredMessage="The Estado field is required."/>
+                    <h:outputLabel value="Cp:" for="cp" />
+                    <h:inputText id="cp" value="#{usuarioBean.usuario.cp}" title="Cp" required="true" requiredMessage="The Cp field is required."/>
+                    <h:outputLabel value="Correo:" for="correo" />
+                    <h:inputText id="correo" value="#{usuarioBean.usuario.correo}" title="Correo" />
+                    <h:outputLabel value="ApellidoMaterno:" for="apellidoMaterno" />
+                    <h:inputText id="apellidoMaterno" value="#{usuarioBean.usuario.apellidoMaterno}" title="ApellidoMaterno" />
+                    <h:commandButton action="UsuarioConfirmarV2" value="Aceptar"/> 
+                    <h:commandButton action="UsuarioListaV2" value="Cancelar" immediate="true"/>
+                </h:panelGrid>
+            </h:form>
+        </f:view>
+
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

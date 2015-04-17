@@ -59,14 +59,14 @@ public class UsuarioBean {
 
         }
         accion = Accion.NADA;
-        return "usuarioLista";
+        return "UsuarioListaV2";
     }
 
     public String procesarCancelar() {
         if (accion == Accion.ELIMINAR) {
-            return "UsuarioLista";
+            return "UsuarioListaV2";
         } else {
-            return "UsuarioCrearEditar";
+            return "UsuarioCrearEditarV2";
 
         }
     }

@@ -61,14 +61,14 @@ public class PuestoBean {
 
         }
         accion = Accion.NADA;
-        return "PuestoLista";
+        return "PuestoListaV2";
     }
 
     public String procesarCancelar() {
         if (accion == Accion.ELIMINAR) {
-            return "PuestoLista";
+            return "PuestoListaV2";
         } else {
-            return "PuestoCrearEditar";
+            return "PuestoCrearEditarV2";
 
         }
     }

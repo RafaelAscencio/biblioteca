@@ -64,14 +64,14 @@ public class AutorBean {
 
         }
         accion = Accion.NADA;
-        return "AutorLista";
+        return "AutorListaV2";
     }
 
     public String procesarCancelar() {
         if (accion == Accion.ELIMINAR) {
-            return "AutorLista";
+            return "AutorListaV2";
         } else {
-            return "AutorCrearEditar";
+            return "AutorCrearEditarV2";
 
         }
     }

@@ -1,19 +1,23 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
-    <h:head>
-        <title>Facelet Title</title>
-    </h:head>
-    <h:body>
-        <h1>Lista de Empleado</h1>
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+    <body>
+
+        <ui:composition template="./TemplatePrincipal.xhtml">
+
+            <ui:define name="content">
+                 <h1>Lista de Empleado</h1>
         <br/>
         <f:view>
 
 
             <h:form>
-                <h:commandButton action="EmpleadoCrearEditar" value="Nuevo" actionListener="#{empleadoBean.limpiarNuevo}"/>
+                <h:commandButton action="EmpleadoCrearEditarV2" value="Nuevo" actionListener="#{empleadoBean.limpiarNuevo}"/>
+                <h:commandButton action="MenuPrincipalV2" value="Regresar"/>
                 <h1><h:outputText value="List"/></h1>
                 <h:dataTable value="#{empleadoBean.lista}" var="item">
                     <h:column>
@@ -95,12 +99,12 @@
                         <h:outputText value="#{item.idPuesto.nombre}"/>
                     </h:column>
                     <h:column>
-                        <h:commandButton action="EmpleadoCrearEditar" value="Editar" actionListener="#{empleadoBean.prepararEditar}">
+                        <h:commandButton action="EmpleadoCrearEditarV2" value="Editar" actionListener="#{empleadoBean.prepararEditar}">
                             <f:setPropertyActionListener target="#{empleadoBean.empleado}" value="#{item}"/>
                         </h:commandButton>
                     </h:column>
                     <h:column>
-                        <h:commandButton action="EmpleadoConfirmar" value="Eliminar" actionListener="#{empleadoBean.prepararEliminar}">
+                        <h:commandButton action="EmpleadoConfirmarV2" value="Eliminar" actionListener="#{empleadoBean.prepararEliminar}">
                             <f:setPropertyActionListener target="#{empleadoBean.empleado}" value="#{item}"/>
                         </h:commandButton>
                     </h:column>
@@ -108,6 +112,9 @@
             </h:form>
         </f:view>
 
-    </h:body>
-</html>
+            </ui:define>
 
+        </ui:composition>
+
+    </body>
+</html>

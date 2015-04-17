@@ -11,7 +11,9 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.event.ActionEvent;
 import mx.edu.itschapala.sistemas.biblioteca.bl.EmpleadoBLLocal;
+import mx.edu.itschapala.sistemas.biblioteca.bl.PuestoBLLocal;
 import mx.edu.itschapala.sistemas.biblioteca.modelo.Empleado;
+import mx.edu.itschapala.sistemas.biblioteca.modelo.Puesto;
 
 /**
  *
@@ -20,20 +22,40 @@ import mx.edu.itschapala.sistemas.biblioteca.modelo.Empleado;
 @ManagedBean
 @SessionScoped
 public class EmpleadoBean {
+
+    @EJB
+    private PuestoBLLocal puestoBL;
     @EJB
     private EmpleadoBLLocal empleadoBL;
-    
-       private Empleado empleado;// no autoadministrado
+
+    private Empleado empleado;// no autoadministrado
     private Accion accion;//objeto accion a realizar
 
     private List<Empleado> lista;
+    private List<Puesto> listaPuesto;
+    private int puestoSelecionado;//valor de la posicion de la lista
     
+
     public EmpleadoBean() {
     }
+
+    public int getPuestoSelecionado() {
+        return puestoSelecionado;
+    }
+
+    public void setPuestoSelecionado(int puestoSelecionado) {
+        this.puestoSelecionado = puestoSelecionado;
+    }
     
-       public List<Empleado> getLista(){
-        lista=empleadoBL.getLista();
-    return lista;
+
+    public List<Empleado> getLista() {
+        lista = empleadoBL.getLista();
+        return lista;
+    }
+
+    public List<Puesto> getListaPuesto() {
+        listaPuesto = puestoBL.getLista();
+        return listaPuesto;
     }
 
     public Empleado getEmpleado() {
@@ -43,10 +65,8 @@ public class EmpleadoBean {
     public void setEmpleado(Empleado empleado) {
         this.empleado = empleado;
     }
-             
-       
-       
-        //Acciones
+
+    //Acciones
     public String procesarPeticion() {
         switch (accion) {
             case NUEVO:
@@ -61,14 +81,14 @@ public class EmpleadoBean {
 
         }
         accion = Accion.NADA;
-        return "EmpleadoLista";
+        return "EmpleadoListaV2";
     }
 
     public String procesarCancelar() {
         if (accion == Accion.ELIMINAR) {
-            return "EmpleadoLista";
+            return "EmpleadoListaV2";
         } else {
-            return "EmpleadoCrearEditar";
+            return "EmpleadoCrearEditarV2";
 
         }
     }
@@ -89,5 +109,8 @@ public class EmpleadoBean {
         accion = Accion.ELIMINAR;
 
     }
-    
+    public  void actualizarPuesto(ActionEvent evt){
+        empleado.setIdPuesto(puestoBL.getPorId(puestoSelecionado));
+    }
+
 }

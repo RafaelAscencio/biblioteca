@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+    <body>
+
+        <ui:composition template="./TemplatePrincipal.xhtml">
+
+            <ui:define name="content">
+                  <f:view>
+
+
+            <h:form>
+                <h1><h:outputText value="View"/></h1>
+                <h:panelGrid columns="2">
+
+                    <h:outputText value="Nombre:"/>
+                    <h:outputText value="#{usuarioBean.usuario.nombre}" title="Nombre"/>
+                    <h:outputText value="ApellidoPaterno:"/>
+                    <h:outputText value="#{usuarioBean.usuario.apellidoPaterno}" title="ApellidoPaterno"/>
+                    <h:outputText value="Telefono:"/>
+                    <h:outputText value="#{usuarioBean.usuario.telefono}" title="Telefono"/>
+                    <h:outputText value="Sexo:"/>
+                    <h:outputText value="#{usuarioBean.usuario.sexo}" title="Sexo"/>
+                    <h:outputText value="Direccion:"/>
+                    <h:outputText value="#{usuarioBean.usuario.direccion}" title="Direccion"/>
+                    <h:outputText value="Colonia:"/>
+                    <h:outputText value="#{usuarioBean.usuario.colonia}" title="Colonia"/>
+                    <h:outputText value="Ciudad:"/>
+                    <h:outputText value="#{usuarioBean.usuario.ciudad}" title="Ciudad"/>
+                    <h:outputText value="Estado:"/>
+                    <h:outputText value="#{usuarioBean.usuario.estado}" title="Estado"/>
+                    <h:outputText value="Cp:"/>
+                    <h:outputText value="#{usuarioBean.usuario.cp}" title="Cp"/>
+                    <h:outputText value="Correo:"/>
+                    <h:outputText value="#{usuarioBean.usuario.correo}" title="Correo"/>
+                    <h:outputText value="ApellidoMaterno:"/>
+                    <h:outputText value="#{usuarioBean.usuario.apellidoMaterno}" title="ApellidoMaterno"/>
+                    <h:commandButton action="#{usuarioBean.procesarPeticion()}" value="Aceptar"/>
+                    <h:commandButton action="#{usuarioBean.procesarCancelar()}" value="Cancelar" />
+                </h:panelGrid>
+            </h:form>
+        </f:view>
+
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>
