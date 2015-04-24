@@ -13,27 +13,54 @@
                 <f:view>
 
 
-            <h:form>
-                <h1><h:outputText value="View"/></h1>
-                <h:panelGrid columns="2">
-                    
-                    <h:outputText value="Titulo:"/>
-                    <h:outputText value="#{libroBean.libro.titulo}" title="Titulo"/>
-                    <h:outputText value="Isbn:"/>
-                    <h:outputText value="#{libroBean.libro.isbn}" title="Isbn"/>
-                    <h:outputText value="Estado:"/>
-                    <h:outputText value="#{libroBean.libro.estado}" title="Estado"/>
-                    <h:outputText value="NumPaginas:"/>
-                    <h:outputText value="#{libroBean.libro.numPaginas}" title="NumPaginas"/>
-                    <h:outputText value="Abstract1:"/>
-                    <h:outputText value="#{libroBean.libro.abstract1}" title="Abstract1"/>
-                    <h:outputText value="Imagen:"/>
-                    <h:outputText value="#{libroBean.libro.imagen}" title="Imagen"/>
-                    <h:commandButton action="#{libroBean.procesarPeticion()}" value="Aceptar"/>
-                    <h:commandButton action="#{libroBean.procesarCancelar()}" value="Cancelar" />
-                </h:panelGrid>
-            </h:form>
-        </f:view>
+                    <h:form>
+                        <h1><h:outputText value="View"/></h1>
+                        <h:panelGrid columns="2">
+
+                            <h:outputText value="Titulo:"/>
+                            <h:outputText value="#{libroBean.libro.titulo}" title="Titulo"/>
+                            <h:outputText value="Isbn:"/>
+                            <h:outputText value="#{libroBean.libro.isbn}" title="Isbn"/>
+                            <h:outputText value="Estado:"/>
+                            <h:outputText value="#{libroBean.libro.estado}" title="Estado"/>
+                            <h:outputText value="NumPaginas:"/>
+                            <h:outputText value="#{libroBean.libro.numPaginas}" title="NumPaginas"/>
+                            <h:outputText value="Abstract1:"/>
+                            <h:outputText value="#{libroBean.libro.abstract1}" title="Abstract1"/>
+                            <h:outputText value="Imagen:"/>
+                            <h:outputText value="#{libroBean.libro.imagen}" title="Imagen"/>
+
+                        </h:panelGrid>
+                        <h1><h:outputText value="Autores"/></h1>
+                        <h:dataTable value="#{libroBean.listaAutorLibro}" var="item">
+
+                            <h:column>
+                                <f:facet name="header">
+                                    <h:outputText value="Autores"/>
+                                </f:facet>
+                                <h:outputText value="#{item.idAutor.nombre} #{item.idAutor.apellido}"/>
+                            </h:column>
+
+                        </h:dataTable>
+
+                        <h1><h:outputText value="Categoria"/></h1>
+                        <h:dataTable value="#{libroBean.listaLibroCategoria}" var="item">
+
+                            <h:column>
+                                <f:facet name="header">
+                                    <h:outputText value="IdCategoria"/>
+                                </f:facet>
+                                <h:outputText value="#{item.idCategoria.nombre}"/>
+                            </h:column>
+
+                        </h:dataTable>
+                        <br></br>
+                        <h:panelGrid columns="2">
+                            <h:commandButton action="#{libroBean.procesarPeticion()}" value="Aceptar"/>
+                            <h:commandButton action="#{libroBean.procesarCancelar()}" value="Cancelar" />
+                        </h:panelGrid>
+                    </h:form>
+                </f:view>
 
             </ui:define>
 

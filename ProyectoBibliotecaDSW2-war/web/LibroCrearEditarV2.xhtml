@@ -27,10 +27,71 @@
                     <h:inputText id="numPaginas" value="#{libroBean.libro.numPaginas}" title="NumPaginas" />
                     <h:outputLabel value="Abstract1:" for="abstract1" />
                     <h:inputTextarea rows="4" cols="30" id="abstract1" value="#{libroBean.libro.abstract1}" title="Abstract1" />
-                    <h:commandButton action="LibroConfirmarV2" value="Aceptar"/> 
-                    <h:commandButton action="LibroListaV2" value="Cancelar" immediate="true"/>
+                    
                 </h:panelGrid>
-            </h:form>
+          
+                         <h1><h:outputText value="Create/Edit"/></h1>
+                         <h:panelGrid columns="3">
+                            
+                             <h:outputLabel value="IdAutor:" for="idAutor" />
+                             <h:selectOneMenu id="idAutor" value="#{libroBean.autorSelecionado}" title="IdAutor" required="true" requiredMessage="The IdAutor field is required.">
+                                 <!-- TODO: update below reference to list of available items-->
+                                 <f:selectItems value="#{autorBean.lista}" var="item" itemLabel="#{item.nombre} #{item.apellido}" itemValue="#{item.id}"/>
+                             </h:selectOneMenu>
+                             <h:commandButton value="Agregar" action="LibroCrearEditarV2" actionListener="#{libroBean.agregarAutor}"/>
+                            
+                         </h:panelGrid>
+                   
+                         <h1><h:outputText value="List"/></h1>
+                         <h:dataTable value="#{libroBean.listaAutorLibro}" var="item">
+                             
+                             <h:column>
+                                 <f:facet name="header">
+                                     <h:outputText value="IdAutor"/>
+                                 </f:facet>
+                                 <h:outputText value="#{item.idAutor.nombre} #{item.idAutor.apellido}"/>
+                             </h:column>
+                            
+                         </h:dataTable>
+                         
+
+
+                         
+                             <h1><h:outputText value="Create/Edit"/></h1>
+                             <h:panelGrid columns="3">
+                                 
+                                 <h:outputLabel value="IdCategoria:" for="idCategoria" />
+                                 <h:selectOneMenu id="idCategoria" value="#{libroBean.categoriaSelecionado}" title="IdCategoria" required="true" requiredMessage="The IdCategoria field is required.">
+                                     <!-- TODO: update below reference to list of available items-->
+                                     <f:selectItems value="#{categoriaBean.lista}" var="item1" itemLabel="#{item1.nombre}" itemValue="#{item1.id}"/>
+                                 </h:selectOneMenu>
+                                  <h:commandButton value="Agregar" action="LibroCrearEditarV2" actionListener="#{libroBean.agregarCategoria}"/>
+                             </h:panelGrid>
+                         
+
+
+                         
+                                 <h1><h:outputText value="List"/></h1>
+                                 <h:dataTable value="#{libroBean.listaLibroCategoria}" var="item">
+                                    
+                                     <h:column>
+                                         <f:facet name="header">
+                                             <h:outputText value="IdCategoria"/>
+                                         </f:facet>
+                                         <h:outputText value="#{item.idCategoria.nombre}"/>
+                                     </h:column>
+                                     
+                                 </h:dataTable>
+                             
+
+
+                    
+                         <h:panelGrid columns="2">
+                             <h:commandButton action="LibroConfirmarV2" value="Aceptar"/> 
+                    <h:commandButton action="LibroListaV2" value="Cancelar" immediate="true"/>
+                         </h:panelGrid>
+                     </h:form>
+
         </f:view>
             </ui:define>
 
